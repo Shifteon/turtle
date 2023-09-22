@@ -1,0 +1,8 @@
+{
+  "name": "Turtle",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "6739e81a"
+}
