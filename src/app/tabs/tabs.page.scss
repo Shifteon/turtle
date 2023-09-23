@@ -1,1 +1,28 @@
+@media only screen and (min-width: 600px) {
+  ion-tabs {
+    display: grid;
+    grid-template-columns: 10% 90%;
+    height: 100%;
+  }
 
+  ion-tab-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    height: 100%;
+    grid-column: 1/2;
+    width: 100%;
+    max-width: 100px;
+  }
+
+  ion-tab-button {
+    max-height: 100px;
+    width: 100%;
+
+    &.tab-selected {
+      ion-icon {
+        width: 70%;
+      }
+    }
+  }
+}

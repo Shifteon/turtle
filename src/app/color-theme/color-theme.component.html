@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Color Theme
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <!-- <div class="info-card">
+      <ion-icon name="color-palette"></ion-icon>
+      <p>Switch things up with a new swatch!</p>
+    </div> -->
+    <div class="content-container secondary">
+      <p class="headline-small">Color Theme</p>
+      <ion-radio-group [value]="appliedTheme" (ionChange)="onThemeSelect($event)">
+        <ng-container *ngFor="let theme of colorThemes">
+          <ion-radio [value]="theme.value" labelPlacement="end" justify="start">{{ theme.name }}</ion-radio>
+        </ng-container>
+      </ion-radio-group>
+    </div>
+    <div class="content-container secondary">
+      <p class="headline-small">Mode</p>
+      <ion-radio-group [value]="appliedMode" (ionChange)="onModeSelect($event)">
+        <ng-container *ngFor="let mode of modes">
+          <ion-radio [value]="mode.value" labelPlacement="end" justify="start">{{ mode.name }}</ion-radio>
+        </ng-container>
+      </ion-radio-group>
+    </div>
+  </div>
+</ion-content>
