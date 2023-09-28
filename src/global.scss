@@ -47,11 +47,11 @@ body {
     background-color: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
   }
-}
 
-.container {
-  max-width: 600px;
-  margin: 0 auto;
+  &.tertiary {
+    background-color: var(--md-sys-color-tertiary-container);
+    color: var(--md-sys-color-on-tertiary-container);
+  }
 }
 
 .info-card {
@@ -79,7 +79,9 @@ ion-button {
   --background: var(--md-sys-color-primary);
   --border-radius: 100px;
   --box-shadow: none;
-  --color: var(--md-sys-color-on-primary)
+  --color: var(--md-sys-color-on-primary);
+  --padding-bottom: 15px;
+  --padding-top: 15px;
   --padding-start: 15px;
   --padding-end: 15px;
 
@@ -106,20 +108,18 @@ ion-header {
 
   ion-title {
     --color: var(--md-sys-color-on-background);
-    font-family: var(--md-sys-typescale-title-large-font-family-name);
-    font-style: var(--md-sys-typescale-title-large-font-family-style);
-    font-weight: var(--md-sys-typescale-title-large-font-weight);
-    font-size: var(--md-sys-typescale-title-large-font-size);
-    letter-spacing: var(--md-sys-typescale-title-large-tracking);
-    line-height: var(--md-sys-typescale-title-large-height);
-    text-transform: var(--md-sys-typescale-title-large-text-transform);
-    text-decoration: var(--md-sys-typescale-title-large-text-decoration);
+    font-family: var(--md-sys-typescale-display-medium-font-family-name);
+    font-style: var(--md-sys-typescale-display-medium-font-family-style);
+    font-weight: var(--md-sys-typescale-display-medium-font-weight);
+    font-size: var(--md-sys-typescale-display-medium-font-size);
+    letter-spacing: var(--md-sys-typescale-display-medium-tracking);
+    line-height: var(--md-sys-typescale-display-medium-height);
+    text-transform: var(--md-sys-typescale-display-medium-text-transform);
+    text-decoration: var(--md-sys-typescale-display-medium-text-decoration);
   }
 
   ion-toolbar {
     --background: var(--md-sys-color-background);
-    margin: 0 auto;
-    max-width: 600px;
   }
 }
 
@@ -154,22 +154,26 @@ ion-tab-bar {
   --color: var(--md-sys-color-on-surface-variant);
 
   ion-tab-button {
-    --background-focused: var(--md-sys-color-primary-container);
+    --background-focused: var(--md-sys-color-secondary);
     --color: var(--md-sys-color-on-surface-variant);
     --color-focused: var(--md-sys-color-on-surface-container);
     --color-selected: var(--md-sys-color-on-surface-container);
-    --ripple-color: var(--md-sys-color-primary-container);
+    --ripple-color: var(--md-sys-color-secondary);
 
     &.tab-selected {
       ion-icon {
         padding: 5px;
-        width: 50%;
-        background-color: var(--md-sys-color-primary-container);
+        width: 40%;
+        background-color: var(--md-sys-color-secondary);
         border-radius: 100px;
-        color: var(--md-sys-color-on-primary-container);
+        color: var(--md-sys-color-on-secondary);
       }
     }
   }
+}
+
+ion-fab-button {
+  --background: var();
 }
 
 

@@ -1,0 +1,46 @@
+p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.expand-button-container {
+  display: flex;
+  justify-content: end;
+  font-size: x-large;
+
+  .expand-button {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.indent {
+  padding-left: 20px;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+
+  ion-button {
+    --background: var(--md-sys-color-secondary);
+    --color: var(--md-sys-color-on-secondary);
+  }
+}
+
+.content-container {
+  margin: 10px auto;
+  transition: max-height 1s ease-in-out;
+  max-height: 300px;
+  overflow: hidden;
+
+  &.expanded {
+    max-height: 3000px;
+    transition: max-height 1s ease-in-out;
+  }
+}
+
+ol li {
+  margin: 10px 0;
+}

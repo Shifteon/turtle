@@ -1,0 +1,36 @@
+<div class="content-container secondary" [ngClass]="{ 'expanded': !small }" (click)="expand()">
+  <p class="headline-large">Recipe name</p>
+  <div class="recipe-info">
+    <span class="label-large">Servings: 2 | </span>
+    <span class="label-large">Prep Time: 15min | </span>
+    <span class="label-large">Cook Time: 1hr </span>
+  </div>
+  <ng-container *ngIf="!small">
+    <div class="ingredients">
+      <p class="headline-small">Ingredients</p>
+      <div class="indent">
+        <p class="body-large">1 Cracker</p>
+      </div>
+    </div>
+    <div class="instructions">
+      <p class="headline-small">Instructions</p>
+      <ol class="body-large">
+        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium debitis ipsam atque?</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. A unde dolore accusantium voluptatibus amet repellendus officiis sunt sint? Fuga, dignissimos sequi cum quod expedita fugiat inventore voluptatum impedit nulla porro?</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, praesentium maiores architecto fuga molestiae numquam!</li>
+      </ol>
+    </div>
+    <div class="button-container">
+      <ion-button>
+        <ion-icon name="clipboard"></ion-icon>
+      </ion-button>
+    </div>
+  </ng-container>
+  <div class="expand-button-container">
+    <div class="expand-button" (click)="shrink($event)">
+      <ion-icon
+        [name]="small ? 'chevron-down' : 'chevron-up'"
+      ></ion-icon>
+    </div>
+  </div>
+</div>

@@ -1,15 +1,17 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Recipes
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <app-recipe [small]="true"></app-recipe>
+  <app-recipe [small]="true"></app-recipe>
 </ion-content>
+<ion-fab horizontal="end" vertical="bottom">
+  <ion-fab-button class="square">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

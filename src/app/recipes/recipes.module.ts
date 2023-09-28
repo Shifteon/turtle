@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { RecipesPage } from './recipes.page';
 
 import { RecipesRoutingModule } from './recipes-routing.module';
+import { RecipeComponent } from 'src/app/recipes/recipe/recipe.component';
 
 @NgModule({
   imports: [
@@ -13,6 +14,6 @@ import { RecipesRoutingModule } from './recipes-routing.module';
     FormsModule,
     RecipesRoutingModule
   ],
-  declarations: [RecipesPage]
+  declarations: [RecipesPage, RecipeComponent]
 })
 export class RecipesModule {}
