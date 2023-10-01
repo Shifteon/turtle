@@ -1,17 +1,10 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Recipes
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
+  <p class="display-medium title">Recipes</p>
   <app-recipe [small]="true"></app-recipe>
   <app-recipe [small]="true"></app-recipe>
 </ion-content>
 <ion-fab horizontal="end" vertical="bottom">
-  <ion-fab-button class="square">
+  <ion-fab-button class="square" (click)="goToAddRecipe()">
     <ion-icon name="add"></ion-icon>
   </ion-fab-button>
 </ion-fab>

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="#" mode="md"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <p class="display-medium title">Add Recipe</p>
+  <div class="content">
+    <div class="form">
+      <p class="title-large">Info</p>
+      <app-text-field background="--md-sys-color-background" name="name" id="name" label="Name"></app-text-field>
+      <app-text-field background="--md-sys-color-background" name="servings" id="servings" label="Servings"></app-text-field>
+      <app-text-field background="--md-sys-color-background" name="prep-time" id="prep-time" label="Prep Time"></app-text-field>
+      <app-text-field background="--md-sys-color-background" name="cook-time" id="cook-time" label="Cook Time"></app-text-field>
+      <p class="title-large">Ingredients</p>
+      <ng-container *ngFor="let input of ingredientInputs; index as i">
+        <div class="removable-input">
+          <div>
+            <app-text-field background="--md-sys-color-background" name="ingredient" id="ingredient{{i}}" label="Ingredient"></app-text-field>
+          </div>
+          <ng-container *ngIf="i !== 0">
+            <ion-icon name="close-circle-outline" (click)="removeIngredient(i)"></ion-icon>
+          </ng-container>
+        </div>
+      </ng-container>
+      <div class="button-container">
+        <ion-button class="outline small" (click)="addIngredientInput()">Add Ingredient</ion-button>
+      </div>
+      <p class="title-large">Instructions</p>
+      <ng-container *ngFor="let input of instructionInputs; index as i">
+        <div class="removable-input">
+          <div>
+            <app-text-field background="--md-sys-color-background" name="instruction" id="instruction{{i}}" label="Instruction"></app-text-field>
+          </div>
+          <ng-container *ngIf="i !== 0">
+            <ion-icon name="close-circle-outline" (click)="removeInstruction(i)"></ion-icon>
+          </ng-container>
+        </div>
+      </ng-container>
+      <div class="button-container">
+        <ion-button class="outline small" (click)="addInstructionInput()">Add Instruction</ion-button>
+      </div>
+      <div class="button-container">
+        <ion-button>Add</ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

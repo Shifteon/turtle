@@ -7,6 +7,7 @@ import { ChangeDetectorRef, Component, Input, NgZone, OnInit } from '@angular/co
 })
 export class RecipeComponent  implements OnInit {
   @Input() small = false;
+  shrinkCssClass = false;
 
   constructor() { }
 
@@ -15,10 +16,15 @@ export class RecipeComponent  implements OnInit {
   expand() {
     if (!this.small) return;
     this.small = false;
+    this.shrinkCssClass = false;
   }
 
   shrink(event: any) {
     event.stopPropagation();
     this.small = true;
+    this.shrinkCssClass = true;
+    // setTimeout(() => {
+    //   this.shrinkCssClass = false;
+    // }, 2000);
   }
 }

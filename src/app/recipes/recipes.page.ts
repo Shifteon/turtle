@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipes',
@@ -7,6 +8,9 @@ import { Component } from '@angular/core';
 })
 export class RecipesPage {
 
-  constructor() {}
+  constructor(private router: Router) {}
 
+  goToAddRecipe() {
+    this.router.navigateByUrl("home/add");
+  }
 }

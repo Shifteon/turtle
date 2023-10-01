@@ -1,4 +1,4 @@
-<div class="content-container secondary" [ngClass]="{ 'expanded': !small }" (click)="expand()">
+<div class="content-container secondary" [ngClass]="{ 'expanded': !small, 'shrink': small }" (click)="expand()">
   <p class="headline-large">Recipe name</p>
   <div class="recipe-info">
     <span class="label-large">Servings: 2 | </span>

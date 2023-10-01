@@ -1,0 +1,33 @@
+input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--md-sys-color-outline);
+  background-color: transparent;
+  color: var(--md-sys-color-on-surface);
+  width: 100%;
+
+  &:focus {
+    border: 2px solid var(--md-sys-color-primary);
+    outline: none;
+  }
+
+  &:focus, &:valid {
+    & + label {
+      transform: translateY(-20px);
+      z-index: 2;
+      padding: 2px;
+    }
+  }
+}
+
+label {
+  color: var(--md-sys-color-on-surface-variant);
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  transition: transform 200ms ease;
+}
+
+.text-field-container {
+  position: relative;
+}

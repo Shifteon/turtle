@@ -11,6 +11,7 @@ p {
   .expand-button {
     width: 20px;
     height: 20px;
+    cursor: pointer;
   }
 }
 
@@ -29,15 +30,32 @@ p {
   }
 }
 
+@keyframes grow {
+  0% { max-height: 300px; }
+  100% { max-height: 3000px; }
+}
+
+@keyframes shrink {
+  0% { max-height: 3000px; }
+  100% { max-height: 300px; }
+}
+
 .content-container {
   margin: 10px auto;
-  transition: max-height 1s ease-in-out;
-  max-height: 300px;
   overflow: hidden;
+  height: auto;
 
   &.expanded {
+    // animation: grow 2s linear forwards;
+    transition: max-height 2s;
     max-height: 3000px;
-    transition: max-height 1s ease-in-out;
+  }
+
+  &.shrink {
+    // animation: shrink 2s linear forwards;
+    cursor: pointer;
+    transition: max-height 2s;
+    max-height: 300px;
   }
 }
 
