@@ -10,16 +10,79 @@
   <div class="content">
     <div class="form">
       <p class="title-large">Info</p>
-      <app-text-field background="--md-sys-color-background" name="name" id="name" label="Name"></app-text-field>
-      <app-text-field background="--md-sys-color-background" name="servings" id="servings" label="Servings"></app-text-field>
-      <app-text-field background="--md-sys-color-background" name="prep-time" id="prep-time" label="Prep Time"></app-text-field>
-      <app-text-field background="--md-sys-color-background" name="cook-time" id="cook-time" label="Cook Time"></app-text-field>
+      <ion-input 
+        label-placement="floating"
+        fill="outline"
+        name="name"
+        id="name"
+        label="Name"
+        (ionChange)="inputName($event)"
+      ></ion-input>
+      <ion-input 
+        label-placement="floating"
+        fill="outline"
+        name="servings"
+        id="servings" 
+        type="number"
+        label="Servings"
+        (ionChange)="inputServings($event)"
+      ></ion-input>
+      <div class="time-unit">
+        <ion-input 
+          label-placement="floating"
+          fill="outline"
+          name="prep-time"
+          id="prep-time"
+          type="number"
+          label="Prep Time"
+          (ionChange)="inputPrepTime($event)"
+        ></ion-input>
+        <ion-radio-group value="hours" (ionChange)="inputPrepTimeUnit($event)">
+          <ion-radio labelPlacement="end" justify="start" value="hours">Hours</ion-radio>
+          <ion-radio labelPlacement="end" justify="start" value="minutes">Minutes</ion-radio>
+        </ion-radio-group>
+      </div>
+      <div class="time-unit">
+        <ion-input 
+          label-placement="floating"
+          fill="outline"
+          name="cook-time"
+          id="cook-time"
+          type="number"
+          label="Cook Time"
+          (ionChange)="inputCookTime($event)"
+        ></ion-input>
+        <ion-radio-group value="hours" (ionChange)="inputCookTimeUnit($event)">
+          <ion-radio labelPlacement="end" justify="start" value="hours">Hours</ion-radio>
+          <ion-radio labelPlacement="end" justify="start" value="minutes">Minutes</ion-radio>
+        </ion-radio-group>
+      </div>
       <p class="title-large">Ingredients</p>
       <ng-container *ngFor="let input of ingredientInputs; index as i">
         <div class="removable-input">
           <div>
-            <app-text-field background="--md-sys-color-background" name="ingredient" id="ingredient{{i}}" label="Ingredient"></app-text-field>
+            <ion-input 
+              label-placement="floating"
+              fill="outline"
+              name="ingredient"
+              id="ingredient{{i}}"
+              label="Ingredient"
+              (ionChange)="inputIngredient($event, i)"
+            ></ion-input>
           </div>
+          <ion-select 
+            label-placement="floating"
+            fill="outline"
+            interface="popover"
+            name="category"
+            id="category{{i}}"
+            label="Category"
+            (ionChange)="inputIngredientCategory($event, i)"
+          >
+            <ng-container *ngFor="let category of categories">
+              <ion-select-option [value]="category">{{ category }}</ion-select-option>
+            </ng-container>
+          </ion-select>
           <ng-container *ngIf="i !== 0">
             <ion-icon name="close-circle-outline" (click)="removeIngredient(i)"></ion-icon>
           </ng-container>
@@ -32,7 +95,14 @@
       <ng-container *ngFor="let input of instructionInputs; index as i">
         <div class="removable-input">
           <div>
-            <app-text-field background="--md-sys-color-background" name="instruction" id="instruction{{i}}" label="Instruction"></app-text-field>
+            <ion-input 
+              label-placement="floating"
+              fill="outline" 
+              name="instruction"
+              id="instruction{{i}}"
+              label="Instruction"
+              (ionChange)="inputInstruction($event, i)"
+            ></ion-input>
           </div>
           <ng-container *ngIf="i !== 0">
             <ion-icon name="close-circle-outline" (click)="removeInstruction(i)"></ion-icon>
@@ -43,7 +113,7 @@
         <ion-button class="outline small" (click)="addInstructionInput()">Add Instruction</ion-button>
       </div>
       <div class="button-container">
-        <ion-button>Add</ion-button>
+        <ion-button (click)="submit()">Add Recipe</ion-button>
       </div>
     </div>
   </div>

@@ -23,6 +23,11 @@
       flex: 1;
     }
 
+    ion-select {
+      margin-left: 10px;
+      max-width: 20%;
+    }
+
     ion-icon {
       font-size: 25px;
       color: var(--md-sys-color-error);
@@ -33,5 +38,13 @@
 
   p {
     margin: 0;
+  }
+
+  .time-unit {
+    display: flex;
+
+    ion-radio-group {
+      margin-left: 10px;
+    }
   }
 }

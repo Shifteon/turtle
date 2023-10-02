@@ -117,6 +117,64 @@ ion-button {
 
 ion-content {
   --background: var(--md-sys-color-background);
+  --color: var(--md-sys-color-on-surface);
+}
+
+ion-select {
+  width: 100%;
+  min-width: 120px;
+  --border-color: var(--md-sys-color-outline);
+  --highlight-color-focused: var(--md-sys-color-primary);
+
+  &:focus, &:active {
+    --border-color: var(--md-sys-color-primary);
+  }
+
+  &.select-fill-outline.select-expanded {
+    --border-color: var(--md-sys-color-primary);
+  }
+}
+
+ion-input {
+  width: 100%;
+  --border-color: var(--md-sys-color-outline);
+  --color: var(--md-sys-color-on-surface);
+  --highlight-color: var(--md-sys-color-outline);
+  --highlight-color-focused: var(--md-sys-color-primary);
+
+  &:focus, &:active {
+    --border-color: var(--md-sys-color-primary);
+  }
+
+  &.input-fill-outline.sc-ion-input-md-h {
+    --border-color: var(--md-sys-color-outline);
+  }
+
+  &.input-fill-outline.has-focus.sc-ion-input-md-h {
+    --border-color: var(--md-sys-color-primary);
+    --highlight-color: var(--md-sys-color-primary);
+    &:hover {
+      --border-color: var(--md-sys-color-primary);
+    }
+  }
+
+  &.input-fill-outline.sc-ion-input-md-h:hover {
+    --border-color: var(--md-sys-color-outline);
+}
+}
+
+ion-select-popover {
+  --backgroud: var(--md-sys-color-surface-variant);
+  ion-list.list-md {
+    background-color: var(--md-sys-color-surface-variant);
+    padding: 0;
+    ion-item {
+      --background: var(--md-sys-color-surface-variant);
+      color: var(--md-sys-color-on-surface-variant);
+      --color-focused: var(--md-sys-color-on-surface-variant);
+      --color-hover: var(--md-sys-color-on-surface-variant);
+    }
+  }
 }
 
 ion-header {
@@ -141,6 +199,10 @@ ion-header {
 
   ion-toolbar {
     --background: var(--md-sys-color-background);
+
+    ion-back-button {
+      --color: var(--md-sys-color-on-surface);
+    }
   }
 }
 
@@ -173,6 +235,7 @@ ion-tab-bar {
   --background: var(--md-sys-color-surface-variant);
   --border: none;
   --color: var(--md-sys-color-on-surface-variant);
+  min-height: 70px;
 
   ion-tab-button {
     --background-focused: var(--md-sys-color-secondary);
@@ -180,6 +243,10 @@ ion-tab-bar {
     --color-focused: var(--md-sys-color-on-surface-container);
     --color-selected: var(--md-sys-color-on-surface-container);
     --ripple-color: var(--md-sys-color-secondary);
+
+    ion-icon {
+      font-size: 25px;
+    }
 
     &.tab-selected {
       ion-icon {
@@ -200,6 +267,7 @@ ion-fab-button {
 .title {
   margin-left: 30px;
   margin-top: 10px;
+  color: var(--md-sys-color-on-surface);
 }
 
 

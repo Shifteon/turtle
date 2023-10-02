@@ -1,4 +1,5 @@
-import { ChangeDetectorRef, Component, Input, NgZone, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Recipe, RecipeService } from 'src/app/recipes/recipe.service';
 
 @Component({
   selector: 'app-recipe',
@@ -7,11 +8,15 @@ import { ChangeDetectorRef, Component, Input, NgZone, OnInit } from '@angular/co
 })
 export class RecipeComponent  implements OnInit {
   @Input() small = false;
+  @Input() index = 0;
   shrinkCssClass = false;
+  recipe: Recipe;
 
-  constructor() { }
+  constructor(private recipeService: RecipeService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.recipe = this.recipeService.getRecipes()[this.index];
+  }
 
   expand() {
     if (!this.small) return;

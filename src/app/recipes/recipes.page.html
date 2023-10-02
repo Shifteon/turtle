@@ -1,7 +1,9 @@
-<ion-content [fullscreen]="true">
+<ion-content>
   <p class="display-medium title">Recipes</p>
-  <app-recipe [small]="true"></app-recipe>
-  <app-recipe [small]="true"></app-recipe>
+  <ng-container *ngFor="let recipe of recipes; index as i">
+    <app-recipe [small]="true" [index]="i"></app-recipe>
+  </ng-container>
+  <div style="height: 100px;"></div>
 </ion-content>
 <ion-fab horizontal="end" vertical="bottom">
   <ion-fab-button class="square" (click)="goToAddRecipe()">
